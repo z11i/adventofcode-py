@@ -31,6 +31,6 @@ def score_2(opponent_shape, want_result):
 
 
 if __name__ == "__main__":
-    data = read(ignore_last=True)
+    data = read()
     print(solve(data, score))
     print(solve(data, score_2))
