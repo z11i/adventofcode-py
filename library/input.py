@@ -7,6 +7,7 @@ from typing import List, Optional, TextIO, TypedDict
 class InputResult:
     example: List[str]
     puzzle: List[str]
+    example2: Optional[List[str]] = None
 
 
 def read(filename: Optional[str] = None) -> List[str]:
@@ -26,6 +27,7 @@ def read2(year: Optional[int] = None, day: Optional[int] = None) -> InputResult:
     day_input_prefix = "/input/".join([year_str, day_str]).split(".")[0]
     input_path = f"{day_input_prefix}.input"
     sample_path = f"{day_input_prefix}.example"
+    sample_path2 = f"{day_input_prefix}.example2"
 
     def r(f: TextIO):
         lines = f.read().split("\n")
@@ -35,4 +37,10 @@ def read2(year: Optional[int] = None, day: Optional[int] = None) -> InputResult:
         return lines
 
     with open(input_path) as fi, open(sample_path) as fs:
-        return InputResult(example=r(fs), puzzle=r(fi))
+        ir = InputResult(example=r(fs), puzzle=r(fi))
+    try:
+        with open(sample_path2) as fs:
+            ir.example2 = r(fs)
+    except FileNotFoundError:
+        pass
+    return ir
