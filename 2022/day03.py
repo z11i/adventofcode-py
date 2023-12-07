@@ -16,7 +16,7 @@ rucksacks = read()
 print(sum(priority_of_dupes(rucksack) for rucksack in rucksacks))
 
 # part 2
-groups_of_3 = iterutils.groupwise(rucksacks, 3)
+groups_of_3 = iterutils.groupwise(rucksacks, 3, tuple)
 print(
     sum(
         priorities.find(c)
