@@ -48,7 +48,7 @@ def solve2(input_data: List[str]):
 
 
 inputs = _.read2()
-_.print(solve(inputs.example))
-_.print(solve(inputs.puzzle))
-_.print(solve2(inputs.example2))
-_.print(solve2(inputs.puzzle))
+_.p(solve(inputs.example))
+_.p(solve(inputs.puzzle))
+_.p(solve2(inputs.example2))
+_.p(solve2(inputs.puzzle))

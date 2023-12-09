@@ -19,7 +19,7 @@ def partially_overlapped(r0: tuple, r1: tuple):
     )
 
 
-_.print(
+_.p(
     sum(
         fully_overlapped(r1, r2)
         for line in _.read()
@@ -27,7 +27,7 @@ _.print(
     )
 )
 
-_.print(
+_.p(
     sum(
         partially_overlapped(r1, r2)
         for line in _.read()

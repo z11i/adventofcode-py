@@ -45,7 +45,7 @@ def solve2(data_gen):
     return "".join([s[-1] for s in stacks if len(s) > 0])
 
 
-__.print(solve(input_data.example))
-__.print(solve(input_data.puzzle))
-__.print(solve2(input_data.example))
-__.print(solve2(input_data.puzzle))
+__.p(solve(input_data.example))
+__.p(solve(input_data.puzzle))
+__.p(solve2(input_data.example))
+__.p(solve2(input_data.puzzle))

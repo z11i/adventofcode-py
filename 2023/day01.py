@@ -57,8 +57,8 @@ def solve2(input_data: List[str]):
     return sum(map(process_line, input_data))
 
 
-_.print(solve(inputs.example))
-_.print(solve(inputs.puzzle))
-_.print(solve2(inputs.example2))
-# _.print(solve2(["eightwo"]))
-_.print(solve2(inputs.puzzle))
+_.p(solve(inputs.example))
+_.p(solve(inputs.puzzle))
+_.p(solve2(inputs.example2))
+# _.p(solve2(["eightwo"]))
+_.p(solve2(inputs.puzzle))
