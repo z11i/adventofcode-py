@@ -3,7 +3,7 @@ from typing import Sequence
 
 
 def p(obj, *args, **kwargs):
-    if hasattr(obj, "__iter__"):
+    if not isinstance(obj, str) and hasattr(obj, "__iter__"):
         obj = list(obj)
     pprint.pprint(obj, *args, **kwargs)
     return obj
