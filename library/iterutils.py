@@ -1,5 +1,7 @@
 import itertools
-from typing import Callable, Iterable, TypeVar
+import operator
+from functools import reduce
+from typing import Callable, Iterable, List, TypeVar
 
 T = TypeVar("T")
 R = TypeVar("R")
@@ -38,3 +40,10 @@ class defaultlist(list):
     def __getitem__(self, index):
         self._fill(index)
         return list.__getitem__(self, index)
+
+
+def diff(nums: List[int]):
+    """
+    diff([1, 2, 3]) -> 1 - 2 - 3 -> -4
+    """
+    return reduce(operator.__sub__, nums)

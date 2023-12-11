@@ -1,4 +1,12 @@
+import pprint
 from typing import Sequence
+
+
+def p(obj, *args, **kwargs):
+    if hasattr(obj, "__iter__"):
+        obj = list(obj)
+    pprint.pprint(obj, *args, **kwargs)
+    return obj
 
 
 def listdbg(lst: Sequence, *args, **kwargs):
